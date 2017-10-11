@@ -1,0 +1,21 @@
+/* .fire {
+    background-color: red;
+    opacity: 0.5;
+    
+} */
+
+.fire {
+    animation: animation 1s ease-in-out infinite alternate;
+    width:500px;
+    background-color: red;
+    opacity: 0.5;
+    
+  }
+  
+  .burn {
+    animation: animation .65s ease-in-out infinite alternate;
+    width:500px;
+    background-color: red;
+    opacity: 0.5;
+     }
+  

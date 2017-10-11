@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous">
 
+    <link rel="stylesheet" href="assets/style.css"  type="text/css" />
+
+
+
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -60,6 +64,8 @@
               <button class="btn btn-default btn-lg vis-button"><span class="glyphicon glyphicon-eye-open"></span> Visible</button>
               <button class="btn btn-info btn-lg invis-button"><span class="glyphicon glyphicon-eye-close"></span> Invisible</button>
               <button class="btn btn-info btn-lg water-button"><span class="glyphicon glyphicon-tint"></span> Water!</button>
+              <button class="btn btn-info btn-lg fire-button"><span class="glyphicon glyphicon-fire"></span> Fire!</button>
+              
             </div>
           </div>
         </div>
@@ -91,11 +97,20 @@
 
         <!-- Captain Planet Image -->
         <img src="Assets/captain-planet.jpg" alt="" class="img captain-planet" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
+     </div>
+        <div class="col-lg-6">
+
+        <!-- Captain Planet change fire -->
+        <img alt="" id="cp" style="position:absolute; top:50px; left: 80px; z-index:2; height: 300px">
       </div>
+        
+
     </div>
   </div>
 
   <script>
+    
+    
     // Look at the jQuery API Docs (https://api.jquery.com/) and add a button of your own that gives Captain Planet a new power.
     // Examples:
     // Click to… Stretch Captain Planet!
@@ -158,12 +173,26 @@
         });
       });
 
+     
       //Create Water Button
       $(".water-button").on("click", function () {
         $(".captain-planet").createElement({
           opacity: "0.05"
         });
       });
+
+        
+        
+
+      //Create Fire Button
+        
+
+      $(".fire-button").on("click", function () {
+        $("#cp").addClass("fire");
+        $("#cp").addClass("burn");
+        
+      });
+
 
       // Move Buttons
       $(".up-button").on("click", function () {
