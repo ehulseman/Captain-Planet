@@ -60,6 +60,7 @@
               <button class="btn btn-default btn-lg vis-button"><span class="glyphicon glyphicon-eye-open"></span> Visible</button>
               <button class="btn btn-info btn-lg invis-button"><span class="glyphicon glyphicon-eye-close"></span> Invisible</button>
               <button class="btn btn-info btn-lg water-button"><span class="glyphicon glyphicon-tint"></span> Water!</button>
+              <button class="btn btn-info btn-lg clone-button"><span class="glyphicon glyphicon-plus"></span> Clone!</button>
             </div>
           </div>
         </div>
@@ -87,7 +88,7 @@
       </div>
 
       <!-- Right Panel (Captain Planet Hero)-->
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="captain-planet">
 
         <!-- Captain Planet Image -->
         <img src="Assets/captain-planet.jpg" alt="" class="img captain-planet" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
@@ -141,7 +142,8 @@
 
       $(".stretch-button").on("click", function () {
         $(".captain-planet").animate({
-          height: "500px", width: "200px"
+          height: "500px",
+          width: "200px"
         });
       });
 
@@ -163,6 +165,16 @@
         $(".captain-planet").createElement({
           opacity: "0.05"
         });
+      });
+
+      // Clone Button
+      $(".clone-button").on("click", function () {
+
+
+       var capPlanClone = $(".captain-planet").clone();
+       $(capPlanClone).css("position", "relative");
+       $(capPlanClone).appendTo("#captain-planet");
+        
       });
 
       // Move Buttons
