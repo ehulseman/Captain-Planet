@@ -53,7 +53,7 @@
         <!-- Controls (Superpower Visibility) -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Superpowers - Invisiblity!</h3>
+            <h3 class="panel-title">Superpowers!</h3>
           </div>
           <div class="panel-body">
             <div class="text-center">
@@ -87,11 +87,12 @@
       </div>
 
       <!-- Right Panel (Captain Planet Hero)-->
-      <div class="col-lg-6">
+      <div id="captain-planet" class="col-lg-6">
 
         <!-- Captain Planet Image -->
         <img src="Assets/captain-planet.jpg" alt="" class="img captain-planet" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
       </div>
+
     </div>
   </div>
 
@@ -123,7 +124,7 @@
       // Size Buttons
       $(".normal-button").on("click", function () {
         $(".captain-planet").animate({
-          height: "300px"
+          height: "300px", width: "450px"
         });
       });
 
@@ -160,9 +161,10 @@
 
       //Create Water Button
       $(".water-button").on("click", function () {
-        $(".captain-planet").createElement({
-          opacity: "0.05"
-        });
+        var waterIcon = $("<img>");
+        waterIcon.attr("src", "Assets/water-icon.png");
+        waterIcon.attr("style", "position:relative; top:50px; left: 80px; z-index: 2; width: 200px; height: 200px");
+      $("#captain-planet").append(waterIcon);
       });
 
       // Move Buttons
